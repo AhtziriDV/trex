@@ -65,7 +65,7 @@ function setup() {
   restart.visible = false;
   
   //invisibleGround = createSprite(200,190,400,10);
-  invisibleGround = createSprite(width/2,height-10,width,100); 
+  invisibleGround = createSprite(width/2,height-10,width,80); 
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -85,7 +85,7 @@ function draw() {
     ground.velocityX = -(6 + 3*score/100);
   
     if((touches.length > 0 || keyDown("space")) && trex.y >= height-120) {
-      trex.velocityY = -22;
+      trex.velocityY = -18;
     }
   
     trex.velocityY = trex.velocityY + 0.8
@@ -133,7 +133,7 @@ function spawnClouds() {
   if (frameCount % 120 === 0) {
     //var cloud = createSprite(600,120,40,10);
     var cloud = createSprite(width+20,height-300,40,10);
-    cloud.y = Math.round(random(80,width/2-30));
+    cloud.y = Math.round(random(80,width/4));
     cloud.addImage(cloudImage);
     cloud.scale = Math.round(random(1,2));
     cloud.velocityX = -3;
