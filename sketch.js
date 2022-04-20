@@ -86,6 +86,7 @@ function draw() {
   
     if((touches.length > 0 || keyDown("space")) && trex.y >= height-120) {
       trex.velocityY = -18;
+      touches=[];
     }
   
     trex.velocityY = trex.velocityY + 0.8
@@ -119,8 +120,9 @@ function draw() {
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     
-    if(mousePressedOver(restart)) {
+    if(mousePressedOver(restart) || touches.length > 0) {
       reset();
+      touches=[];
     }
   }
   
