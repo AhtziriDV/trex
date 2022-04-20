@@ -41,7 +41,8 @@ function setup() {
   trex = createSprite(50,height-70,20,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
-  trex.scale = 0.5;
+  //trex.scale = 0.5;
+  trex.scale = 1;
   
   //ground = createSprite(200,180,400,20);
   ground = createSprite(width/2,height-20,width,2);
@@ -76,7 +77,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(255);
-  text("Puntuación: "+ score, 500,50);
+  textSize(30);
+  text("Puntuación: "+ score, width-150,100);
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
@@ -133,7 +135,7 @@ function spawnClouds() {
     var cloud = createSprite(width+20,height-300,40,10);
     cloud.y = Math.round(random(80,width/2-30));
     cloud.addImage(cloudImage);
-    cloud.scale = 0.5;
+    cloud.scale = 1;
     cloud.velocityX = -3;
     
      //asigna ciclo de vida a la variable
@@ -175,7 +177,7 @@ function spawnObstacles() {
     }
     
     //asigna escala y ciclo de vida al obstáculo           
-    obstacle.scale = 0.5;
+    obstacle.scale = 1;
     obstacle.lifetime = width/2;
     //añade cada obstáculo al grupo
     obstaclesGroup.add(obstacle);
