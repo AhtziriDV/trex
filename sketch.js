@@ -77,8 +77,8 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(255);
-  textSize(30);
-  text("Puntuación: "+ score, width-150,100);
+  textSize(25);
+  text("Puntuación: "+ score, width-250,100);
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
