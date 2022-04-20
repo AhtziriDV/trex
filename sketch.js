@@ -65,7 +65,7 @@ function setup() {
   restart.visible = false;
   
   //invisibleGround = createSprite(200,190,400,10);
-  invisibleGround = createSprite(width/2,height-10,width,80); 
+  invisibleGround = createSprite(width/2,height-10,width,40); 
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -133,7 +133,7 @@ function spawnClouds() {
   if (frameCount % 120 === 0) {
     //var cloud = createSprite(600,120,40,10);
     var cloud = createSprite(width+20,height-300,40,10);
-    cloud.y = Math.round(random(80,width/4));
+    cloud.y = Math.round(random(80,height/2));
     cloud.addImage(cloudImage);
     cloud.scale = Math.round(random(1,2));
     cloud.velocityX = -3;
